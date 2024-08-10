@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Musical</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('./img/a.gif');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+        .survey-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(219, 194, 212, 0.9); /* Fondo blanco semi-transparente */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #000;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .checkbox-container {
+            display: flex;
+            flex-direction: column; /* Diseño vertical más simple */
+        }
+        .checkbox-container label {
+            margin-bottom: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #522570; /* Color de fondo del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #d439c0; /* Color de fondo del botón al pasar el ratón */
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ebf0f5; /* Fondo gris claro */
+            border-radius: 5px;
+        }
+        .result h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-container">
+    <h2>Encuesta Musical de los 80s</h2>
+    <div id="survey">
+        <div class="question">
+            <label>1. ¿Qué artista de los 80s prefieres?</label>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="q1_1" value="Madonna"> Madonna</label>
+                <label><input type="checkbox" id="q1_2" value="Prince"> Prince</label>
+                <label><input type="checkbox" id="q1_3" value="Michael Jackson"> Michael Jackson</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>2. ¿Qué canción prefieres?</label>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="q2_1" value="Billie Jean"> "Billie Jean" - Michael Jackson (1982)</label>
+                <label><input type="checkbox" id="q2_2" value="Like a Prayer"> "Like a Prayer" - Madonna (1989)</label>
+                <label><input type="checkbox" id="q2_3" value="Sweet Child O' Mine"> "Sweet Child O' Mine" - Guns N' Roses (1987)</label>
+            </div>
+        </div>
+        <div class="question">
+            <label>3. ¿Qué canción en español prefieres?</label>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="q3_1" value="Cuando Calienta el Sol"> "Cuando Calienta el Sol" - Luis Miguel (1987)</label>
+                <label><input type="checkbox" id="q3_2" value="Persiana Americana"> "Persiana Americana" - Soda Stereo (1984)</label>
+                <label><input type="checkbox" id="q3_3" value="Afuera"> "Afuera" - Caifanes (1989)</label>
+            </div>
+        </div>
+        <button onclick="showResults()">Enviar Encuesta</button>
+    </div>
+
+    <div id="result" class="result" style="display:none;">
+        <h3>Resultados de la Encuesta:</h3>
+        <p><strong>1. Artistas preferidos:</strong> <span id="resultQ1"></span></p>
+        <p><strong>2. Canciones preferidas:</strong> <span id="resultQ2"></span></p>
+        <p><strong>3. Canciones en español preferidas:</strong> <span id="resultQ3"></span></p>
+    </div>
+</div>
+
+<script src="funciones.js"></script>
+
+</body>
+</html>
